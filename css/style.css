@@ -1,0 +1,347 @@
+:root {
+    /* ### Primary */
+
+    --linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%); /* (active input border) */
+    --red: hsl(0, 100%, 66%); /* (input errors) */
+
+    /* ### Neutral */
+
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+}
+
+/* Desktop Design */
+
+.bg-main {
+    height: 100vh;
+    width: 33vw;
+    background: url(../images/bg-main-desktop.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+main {
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    z-index: 1000;
+    transition: .3s;
+}
+
+/* Cartes */
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card {
+    color: var(--white);
+    width: 400px;
+    height: 217px;
+    padding: 25px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.front {
+    background: url(../images/bg-card-front.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.circle-full {
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border-radius: 50%;
+}
+
+.circle-empty {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+}
+
+.card-number {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+.box-card-name-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-name {
+    text-transform: uppercase;
+    font-size: .75em;
+}
+
+.card-date {
+    font-size: .75em;
+}
+
+.back {
+    position: relative;
+    background: url(../images/bg-card-back.png);
+    background-position: center;
+    background-size: cover;
+    margin-left: 80px;
+}
+
+.card-cvc {
+    position: absolute;
+    right: 50px;
+    top: 97px;
+    font-size: .75em;
+}
+
+/* Formulaire */
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    max-width: 400px;
+    transition: .5s;
+}
+
+form label {
+    font-size: .75em;
+    color: var(--very-dark-violet);
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 7.5px 10px;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+form input:focus {
+    border-color: var(--linear-gradient);
+}
+
+form input::placeholder {
+    color: var(--light-grayish-violet);
+}
+
+.form-card-name {
+    margin-bottom: 20px;
+}
+
+.form-card-number {
+    margin-bottom: 20px;
+}
+
+.form-card-date-cvc {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.form-card-date {
+    width: 50%;
+}
+
+.input-mm-yy {
+    display: flex;
+    gap: 10px;
+}
+
+.form-card-cvc {
+    width: 50%;
+}
+
+.btn {
+    width: 100%;
+    background: var(--very-dark-violet);
+    color: white;
+    font-size: .9em;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Error form */
+
+.blank-error {
+    font-size: .6em;
+    color: var(--red);
+    text-transform: initial;
+    margin-top: 7.5px;
+    display: none;
+}
+
+.format-error {
+    font-size: .6em;
+    color: var(--red);
+    text-transform: initial;
+    margin-top: 7.5px;
+    display: none;
+}
+
+/* Result form page */
+
+.result {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transition: .3s;
+    display: none;
+}
+
+.result h1 {
+    font-size: 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.result p {
+    font-size: .75em;
+    color: var(--dark-grayish-violet);
+    margin-bottom: 20px;
+}
+
+
+/* TABLET DESIGN */
+
+@media (max-width: 1000px) {
+    main {
+        max-width: 800px;
+        gap: 50px;
+    }
+    .card {
+        width: 330px;
+    }
+    .back {
+        margin-left: 50px;
+        background-size: 100% 100%;
+    }
+    .circle {
+        margin-bottom: 60px;
+    }
+    .card-number {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+    .card-name {
+        font-size: .65em;
+    }
+    .card-date {
+        font-size: .65em;
+    }
+    form {
+        max-width: 330px;
+    }
+    .result {
+        max-width: 330px;
+    }
+}
+
+/* SMALL TABLET & MOBILE DESIGN */
+
+@media (max-width: 768px) {
+    .bg-main {
+        background: url(../images/bg-main-mobile.png);
+        background-size: cover;
+        background-position: center;
+        height: 33vh;
+        width: 100vw;
+        top: 0;
+    }
+    main {
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        gap: 0px;
+    }
+    .cards {
+        flex-direction: column-reverse;
+        gap: 0px;
+        width: 100%;
+        position: relative;
+    }
+    .card {
+        height: 180px;
+        max-width: 300px;
+    }
+    .front {
+        position: relative;
+        bottom: 75px;
+        z-index: 10;
+    }
+    .circle {
+        margin-bottom: 40px;
+    }
+    .card-number {
+        margin-bottom: 20px;
+        font-size: 1em;
+    }
+    .back {
+        margin-left: auto;
+    }
+    .card-cvc {
+        top: 80px;
+        right: 40px;
+    }
+    form {
+        width: 100%;
+        max-width: none;
+    }
+    .result {
+        max-width: none;
+        width: 100%;
+    }
+}
+
+/* For a form more lisible in small mobile device */
+
+@media (max-width: 361px) {
+    .form-card-date-cvc {
+        gap: 10px;
+    }
+}
