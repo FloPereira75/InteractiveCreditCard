@@ -114,6 +114,9 @@ main {
 .card-date {
     font-size: .75em;
 }
+.card-date span {
+    font-size: 1em;
+}
 
 .back {
     position: relative;
