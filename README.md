@@ -4,7 +4,7 @@
 
 ## Link to the website
 
-https://interactive-credit-card-kappa.vercel.app/
+[Go](https://interactive-credit-card-kappa.vercel.app/)
 
 ## Welcome! 👋
 
